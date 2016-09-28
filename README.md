@@ -1,4 +1,4 @@
-# 2016 10/1 スクレイピング勉強会
+# スクレイピング勉強会
 
 ## 環境の準備
 
@@ -31,19 +31,54 @@ gemの管理がしやすくなるので、絶対にあったほうがいいで�
 MacでMySQLを使うなら入れておいた方がいいです。  
 既に似たようなソフトを導入しているのなら、そちらでも大丈夫かと思います。
 
-## まずやること
+## gemのインストールおよびgemの説明
 
-### Bundlerを利用してgemをインストール
+### Bundlerを利用したgemのインストール
 
-今回の勉強会で使いそうなgemをまとめてインストールします。
+git cloneしてきたら、まずはgemをインストールしてしまいましょう。  
+今回の勉強会で使いそうなgemをGemfileにまとめたので、以下のコマンドでBundlerを利用してインストールします。
 
 ```
 $ bundle install --path .bundle
 ```
 
-これでBundlerを利用してインストールできます。  
-ここでインストールしたgemを使用したい場合、Rubyの実行時に、"bundle exec"をつけてください。
+ここでインストールしたgemを使用したい場合、コマンドの前に、"bundle exec"をつけてください。
 
 ```
 $ bundle exec ruby hoge.rb
 ```
+
+### gemの説明
+
+#### Nokogiri
+
+CSSセレクタを使ってhtmlソースから必要な情報を抽出するのに使います。  
+XPathも使えますが、CSSセレクタの方がわかりやすいと思います。
+
+#### Mechanize
+
+ウェブアクセスをエミュレートするのに使います。  
+ログインが必要なサイトのスクレイピングが簡単にできるようになります。
+
+#### Capybara, Poltergeist
+
+Capybaraは、ブラウザ上のアクションをシミュレートするのに使います。  
+ドライバーにPhantomJSを用いることで、JavaScriptにも対応できます。  
+PhantomJSはHomebrewでインストールしてしまいましょう。
+
+```
+$ brew install phantomjs
+```
+  
+Poltergeistは、RubyからPhantomJSを扱えるようにしてくれるgemです。
+
+#### Active Record, MySQL2
+
+Active Recordは、データベースにアクセスするのに使います。  
+Railsで利用されているイメージがあるかもしれませんが、Ruby単体でも使えます。  
+MySQL2は、MySQLに接続するためのアダプタです。
+
+#### fastimage
+
+画像サイズを調べるのに使います。  
+画像の取捨選択などに活用できます。
