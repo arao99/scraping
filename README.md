@@ -82,3 +82,26 @@ MySQL2は、MySQLに接続するためのアダプタです。
 
 画像サイズを調べるのに使います。  
 画像の取捨選択などに活用できます。
+
+## サンプル
+
+### 概要
+
+[NAVERまとめ](http://matome.naver.jp/)の注目まとめのタイトル、view数、著者、詳細リンク先URLを取得し、  
+データベースに追加するスクリプトです。
+
+### 使い方
+
+まず、Sequel Proから、scraping\_sampleというデータベースを作成します。  
+作成したら、scraping\_sample\_2016-09-29.sqlをインポートして、テーブルを作成します。  
+次に、データベースへの接続部分であるdatabase.rbを必要に応じて書き換えます。  
+最後に、naver.rbを実行すれば、情報を取得して、取得した情報がデータベースに追加されます。
+
+## おまけ
+
+Microsoft Cognitive Serviceに、[Computer Vision API](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api)というAPIがあります。  
+いろいろな項目をなかなか精度良く判定してくれるので、画像を扱う場合は役にた立つかと思います。  
+無料版と有料版があるので、利用する場合は必要に応じて選んでください。  
+こんなことができるというQiitaの記事をリンクしておきます。  
+[最近の画像認識の実力～MS の最先端の研究成果 Computer Vision API を Python で使ってみた](http://qiita.com/kosfuji/items/621cbedfad0eb68b2f5d)  
+[MSの画像解析サービスProject Oxfordでコスプレ ラブライブ四天王の年齢判定をプログラミングしてみる](http://qiita.com/AKB428/items/ba32bdf917037956b40f)
